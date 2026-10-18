@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Silmiya, with all my heart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#180d2b; --plum:#2c1448; --rose:#f08a9f; --blush:#ffd9e0;
+  --gold:#f4cf86; --ivory:#fff6ee;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(120% 80% at 50% 0%,var(--plum),var(--night) 70%) fixed;color:var(--ivory);font-family:var(--sans);line-height:1.7;overflow-x:hidden}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main{position:relative;z-index:1}
+section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:84px 22px;text-align:center}
+h1,h2{font-family:var(--serif);font-weight:700;line-height:1.1}
+h1{font-size:clamp(3rem,11vw,7.5rem);background:linear-gradient(100deg,var(--blush),var(--rose) 45%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 28px rgba(240,138,159,.45));animation:glow 4s ease-in-out infinite alternate}
+@keyframes glow{to{filter:drop-shadow(0 0 46px rgba(244,207,134,.6))}}
+h2{font-size:clamp(2rem,6vw,3.6rem);color:var(--blush);margin-bottom:14px}
+.sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,3.4vw,1.8rem);color:var(--gold);margin-top:18px;min-height:2.2em}
+.sky{font-size:2.2rem;margin-bottom:10px;color:var(--gold);animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(6deg)}}
+.hint{margin-top:40px;font-size:.95rem;color:var(--blush);opacity:.75;animation:float 3s ease-in-out infinite}
+p.lead{max-width:34rem;font-size:1.1rem;opacity:.9;margin-bottom:34px}
+
+/* then → now slider */
+.cmp{position:relative;width:min(92vw,520px);aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:2px solid rgba(244,207,134,.55);box-shadow:0 0 60px rgba(240,138,159,.35),0 30px 60px rgba(0,0,0,.5);touch-action:none;user-select:none;cursor:ew-resize;background:var(--plum)}
+.cmp .pic{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.5rem;color:var(--blush)}
+.cmp .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .then{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0);background:linear-gradient(160deg,#5b2a63,#2c1448);z-index:2}
+.cmp .now{background:linear-gradient(160deg,#a8486a,#5b2a63)}
+.tag{position:absolute;bottom:14px;z-index:4;padding:5px 14px;border-radius:99px;background:rgba(24,13,43,.72);color:var(--gold);font-size:.85rem;backdrop-filter:blur(6px)}
+.tag.l{left:14px}.tag.r{right:14px}
+.bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;margin-left:-1.5px;background:var(--gold);z-index:3;box-shadow:0 0 18px var(--gold)}
+.bar::after{content:"♥";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-size:1.4rem;box-shadow:0 0 24px var(--rose)}
+.cap{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--blush);max-width:30rem}
+
+/* lines */
+.lines{max-width:36rem;display:grid;gap:30px}
+.lines p{font-family:var(--serif);font-size:clamp(1.4rem,4.2vw,2rem);line-height:1.35;opacity:0;transform:translateY(22px);transition:opacity 1.1s,transform 1.1s}
+.lines p.in{opacity:1;transform:none}
+.lines em{color:var(--gold)}
+
+/* dreams */
+.dreams{display:grid;gap:18px;width:min(92vw,880px);grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:20px}
+.dream{padding:28px 22px;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid rgba(244,207,134,.3);backdrop-filter:blur(8px);transition:transform .4s,background .4s}
+.dream:hover{transform:translateY(-8px) rotate(-1deg);background:rgba(240,138,159,.16)}
+.dream b{display:block;font-size:2rem;margin-bottom:6px}
+.dream h3{font-family:var(--serif);font-size:1.6rem;color:var(--gold)}
+.dream span{font-size:.98rem;opacity:.85}
+
+/* finale */
+.ring{font-size:4rem;animation:float 4s ease-in-out infinite}
+.dua{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3.6vw,1.8rem);color:var(--gold);max-width:32rem}
+button{margin-top:36px;font:500 1.05rem var(--sans);padding:16px 34px;border:0;border-radius:99px;color:#fff;cursor:pointer;background:linear-gradient(100deg,var(--rose),#d4527a);box-shadow:0 0 34px rgba(240,138,159,.6);transition:transform .25s}
+button:hover{transform:scale(1.06)}
+button:focus-visible,.cmp:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.sign{margin-top:44px;font-family:var(--serif);font-size:1.5rem;color:var(--blush)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<main>
+
+<section id="top">
+  <div class="sky">☪ ✦</div>
+  <h1>I love you,<br>Silmiya</h1>
+  <div class="sub" id="typed"></div>
+  <div class="hint">scroll down, our story starts here ↓</div>
+</section>
+
+<section>
+  <h2>From then, to now</h2>
+  <p class="lead">Second standard to today. Different uniforms, same heart. Drag the heart across.</p>
+  <div class="cmp" id="cmp" tabindex="0" role="slider" aria-label="Then and now photo slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+    <div class="pic now"><img src="now.jpg" alt="Silmiya now" onerror="this.remove()"><span>now.jpg</span></div>
+    <div class="pic then"><img src="school.jpg" alt="Silmiya in 2nd standard" onerror="this.remove()"><span>school.jpg</span></div>
+    <div class="bar"></div>
+    <span class="tag l">2nd standard</span><span class="tag r">Today</span>
+  </div>
+  <p class="cap">That little girl grew into the person my whole heart calls home.</p>
+</section>
+
+<section>
+  <h2>What I want to tell you</h2>
+  <div class="lines">
+    <p>You are the best thing that ever happened to me.</p>
+    <p>Every time I see your face, my whole day becomes <em>beautiful</em>.</p>
+    <p>I don't want a perfect life. I want <em>an ordinary life with you</em>, every single day.</p>
+    <p>Whatever I build, whatever I become, it is for you.</p>
+    <p>I love you, Silmiya. Today, tomorrow, always.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Our life, one day</h2>
+  <p class="lead">This is what I see when I close my eyes.</p>
+  <div class="dreams">
+    <div class="dream"><b>🌅</b><h3>Our mornings</h3><span>Chai together, your laugh, and a quiet dua before the day begins.</span></div>
+    <div class="dream"><b>🏡</b><h3>Our home</h3><span>Small, warm, and full of love. The place where you are always happy.</span></div>
+    <div class="dream"><b>🌙</b><h3>Our nights</h3><span>Holding your hand, talking about everything and nothing, grateful for you.</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="ring">💍</div>
+  <h2>And soon, inshā’Allāh</h2>
+  <p class="dua">I pray that Allah writes you as my wife, and that we walk this life together in love and peace.</p>
+  <button id="love">Tap if you love me too ♥</button>
+  <p class="sign">Forever yours,<br>Saalim</p>
+</section>
+
+</main>
+
+<script>
+/* typed line */
+const words="You are my today, my tomorrow, and my forever.";
+const t=document.getElementById('typed');let i=0;
+(function type(){t.textContent=words.slice(0,i++);if(i<=words.length)setTimeout(type,70)})();
+
+/* then/now slider */
+const c=document.getElementById('cmp');
+function setP(x){const r=c.getBoundingClientRect();let p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));c.style.setProperty('--p',p+'%');c.setAttribute('aria-valuenow',Math.round(p))}
+let drag=false;
+c.addEventListener('pointerdown',e=>{drag=true;c.setPointerCapture(e.pointerId);setP(e.clientX)});
+c.addEventListener('pointermove',e=>{if(drag)setP(e.clientX)});
+c.addEventListener('pointerup',()=>drag=false);
+c.addEventListener('keydown',e=>{const v=+c.getAttribute('aria-valuenow');if(e.key==='ArrowLeft')setP(c.getBoundingClientRect().left+(Math.max(0,v-5))/100*c.offsetWidth);if(e.key==='ArrowRight')setP(c.getBoundingClientRect().left+(Math.min(100,v+5))/100*c.offsetWidth)});
+/* gentle intro sweep */
+let s=0;const sweep=setInterval(()=>{s+=2;c.style.setProperty('--p',(50+Math.sin(s/12)*30)+'%');if(s>75||drag){clearInterval(sweep);if(!drag)c.style.setProperty('--p','50%')}},30);
+
+/* reveal lines */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.6});
+document.querySelectorAll('.lines p').forEach((p,n)=>{p.style.transitionDelay=(n%2)*.1+'s';io.observe(p)});
+
+/* falling petals, hearts and stars */
+const cv=document.getElementById('fx'),x=cv.getContext('2d');let W,H,items=[];
+const glyphs=['♥','❀','✦','·'],cols=['#f08a9f','#ffd9e0','#f4cf86'];
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+addEventListener('resize',size);size();
+function mk(y,bx,by){return{x:bx??Math.random()*W,y:y??-20,s:8+Math.random()*18,v:.4+Math.random()*1.1,d:Math.random()*6,g:glyphs[Math.random()*4|0],c:cols[Math.random()*3|0],vx:bx?(Math.random()-.5)*5:0,vy:by?-2-Math.random()*3:0}}
+for(let n=0;n<45;n++)items.push(mk(Math.random()*H));
+function burst(px,py){for(let n=0;n<40;n++){const o=mk(py,px,py);o.g='♥';o.s=14+Math.random()*20;items.push(o)}}
+(function loop(){
+  x.clearRect(0,0,W,H);
+  items.forEach(o=>{o.d+=.02;o.x+=Math.sin(o.d)*.7+o.vx;o.y+=o.v+o.vy;o.vy*=.97;o.vx*=.98;
+    x.globalAlpha=.55;x.fillStyle=o.c;x.font=o.s+'px serif';x.fillText(o.g,o.x,o.y);
+    if(o.y>H+30){o.y=-20;o.x=Math.random()*W;o.vx=0;o.vy=0}});
+  if(items.length>140)items.splice(45,items.length-140);
+  requestAnimationFrame(loop)})();
+document.getElementById('love').addEventListener('click',e=>{const r=e.target.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);e.target.textContent='I love you more ♥'});
+</script>
+</body>
+</html>
